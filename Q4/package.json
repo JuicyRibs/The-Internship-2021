@@ -1,0 +1,11 @@
+{
+  "name": "crawler",
+  "version": "1.0.0",
+  "description": "Web crawler for The Internship 2021",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1",
+    "puppeteer": "^8.0.0"
+  }
+}
