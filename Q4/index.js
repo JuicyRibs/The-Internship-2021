@@ -1,10 +1,10 @@
-const puppeteer = require("puppeteer");
-const express = require("express");
+import { launch } from "puppeteer";
+import express from "express";
 const app = express();
 
 const data = async () => {
   const companyList = [];
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await launch({ headless: true });
   const page = await browser.newPage();
   await page.goto("https://theinternship.io/");
 
@@ -33,7 +33,7 @@ const data = async () => {
   }
 };
 
-app.get("/companies", async (req, res, next) => {
+app.get("/companies", async (_req, res) => {
   data().then((data) => {
     const companyWrapper = {
       companies: [],
